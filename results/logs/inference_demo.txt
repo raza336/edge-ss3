@@ -1,0 +1,17 @@
+
+=== model: fp32 | backend: torch | file: fp32_resnet18.pth
+  # prediction     conf  truth        ok
+  0 cat           88.0%  cat          Y
+  1 ship          96.8%  ship         Y
+  2 ship          95.6%  ship         Y
+  3 airplane      93.9%  airplane     Y
+  4 frog          99.9%  frog         Y
+accuracy on these 5 images: 100.0%
+
+=== model: ptq | backend: torch | file: ptq_int8_resnet18.pt
+  # prediction     conf  truth        ok
+  0 cat           86.8%  cat          Y
+  1 ship          96.7%  ship         Y
+  2 ship          94.6%  ship         Y
+  3 airplane      93.8%  airplane     Y
+  4 frog          99.9%  frog         Y

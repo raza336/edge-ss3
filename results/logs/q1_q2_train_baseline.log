@@ -1,0 +1,11 @@
+=== Baseline training | {'epochs': 8, 'batch_size': 128, 'lr': 0.1, 'wd': 0.0005, 'seed': 42, 'data_dir': '/home/claude/sub/data', 'out': '/home/claude/sub/checkpoints/fp32_resnet18.pth', 'threads': 0}
+parameters: 11,173,962
+epoch  1/8 train_loss 1.5360 train_acc 44.48 | test_loss 1.7932 test_acc 44.61 | 4.7 min
+epoch  2/8 train_loss 1.1236 train_acc 60.47 | test_loss 1.0503 test_acc 64.56 | 18.0 min
+epoch  3/8 train_loss 0.8654 train_acc 69.73 | test_loss 0.8204 test_acc 71.20 | 22.9 min
+epoch  4/8 train_loss 0.7325 train_acc 74.65 | test_loss 0.6849 test_acc 76.97 | 27.7 min
+epoch  5/8 train_loss 0.6346 train_acc 77.90 | test_loss 0.6205 test_acc 78.57 | 32.5 min
+epoch  6/8 train_loss 0.5475 train_acc 81.07 | test_loss 0.5378 test_acc 81.43 | 37.4 min
+epoch  7/8 train_loss 0.4483 train_acc 84.46 | test_loss 0.4458 test_acc 84.62 | 42.3 min
+epoch  8/8 train_loss 0.3569 train_acc 87.70 | test_loss 0.3954 test_acc 86.33 | 47.0 min
+Saved FP32 checkpoint -> /home/claude/sub/checkpoints/fp32_resnet18.pth  (final test acc 86.33%)

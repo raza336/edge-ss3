@@ -1,0 +1,18 @@
+benchmarking fp32 (onnx) ...
+   acc 86.33% | size 44.69 MB | lat 3.01 ms | thr 658.0 img/s
+benchmarking ptq (onnx) ...
+   acc 86.35% | size 11.29 MB | lat 0.87 ms | thr 2224.9 img/s
+benchmarking qat (onnx) ...
+   acc 87.18% | size 44.74 MB | lat 0.856 ms | thr 2276.5 img/s
+benchmarking unstructured (onnx) ...
+   acc 86.97% | size 44.69 MB | lat 3.281 ms | thr 701.1 img/s
+benchmarking structured (onnx) ...
+   acc 86.82% | size 23.79 MB | lat 2.013 ms | thr 854.6 img/s
+
+Wrote onnx_benchmark.csv and onnx_predictions.csv in /home/claude/sub/results
+       model backend  test_accuracy_pct  size_mb  size_gzip_mb  latency_bs1_mean_ms  latency_bs1_p50_ms  latency_bs1_p95_ms  throughput_bs256_img_per_s  acc_delta_vs_first_pts  size_reduction_x  gzip_size_reduction_x  latency_speedup_x  throughput_speedup_x  agreement_with_first_pct
+        fp32    onnx              86.33    44.69         41.31                3.010               3.011               3.166                       658.0                    0.00              1.00                   1.00               1.00                  1.00                    100.00
+         ptq    onnx              86.35    11.29         10.36                0.870               0.862               0.980                      2224.9                    0.02              3.96                   3.99               3.46                  3.38                     99.47
+         qat    onnx              87.18    44.74         41.31                0.856               0.852               0.910                      2276.5                    0.85              1.00                   1.00               3.52                  3.46                     95.67
+unstructured    onnx              86.97    44.69          9.93                3.281               3.096               4.203                       701.1                    0.64              1.00                   4.16               0.92                  1.07                     95.10
+  structured    onnx              86.82    23.79         21.99                2.013               1.988               2.302                       854.6                    0.49              1.88                   1.88               1.50                  1.30                     92.55

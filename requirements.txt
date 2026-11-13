@@ -1,0 +1,9 @@
+# Tested with Python 3.13 on x86-64 Linux, CPU only
+torch>=2.2
+torchvision>=0.17
+numpy
+pandas
+onnx>=1.15
+onnxruntime>=1.17
+pillow
+matplotlib        # only for make_report_assets.py

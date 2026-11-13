@@ -1,0 +1,13 @@
+=== PTQ | backend=fbgemm | {'calib_size': 1000, 'fp32': '/home/claude/sub/checkpoints/fp32_resnet18.pth', 'out': '/home/claude/sub/checkpoints/ptq_int8_resnet18.pt', 'data_dir': '/home/claude/sub/data', 'ablation': True, 'seed': 42}
+FP32 test accuracy: 86.33%   (44.8 MB)
+Calibrating with 1000 training images ...
+PTQ INT8 test accuracy: 86.30%  (drop +0.03 pts)
+Saved deployable INT8 model -> /home/claude/sub/checkpoints/ptq_int8_resnet18.pt (11.4 MB); re-loaded accuracy 86.30%
+  calibration size    10 -> INT8 acc 86.32%
+  calibration size    50 -> INT8 acc 86.36%
+  calibration size   100 -> INT8 acc 86.32%
+  calibration size   250 -> INT8 acc 86.41%
+  calibration size   500 -> INT8 acc 86.23%
+  calibration size  1000 -> INT8 acc 86.30%
+  calibration size  2000 -> INT8 acc 86.37%
+  calibration size  5000 -> INT8 acc 86.39%

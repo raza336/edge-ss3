@@ -1,0 +1,4 @@
+model  acc%    MB  gzMB  lat_ms  img/s  nz_params  MACs_M  sparse%  lat_x  thr_x
+ fp32 86.33 44.78 41.30   6.374  861.5 11173962.0  138.86      0.0   1.00   1.00
+  ptq 86.30 11.43 10.43   1.158 2695.4        NaN     NaN      NaN   5.50   3.13
+  qat 87.30 11.43 10.44   1.294 2735.1        NaN     NaN      NaN   4.93   3.17

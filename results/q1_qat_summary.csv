@@ -1,0 +1,2 @@
+fp32_acc,qat_fakequant_acc,qat_int8_acc,epochs,lr
+86.33,87.18,87.3,2.0,0.01

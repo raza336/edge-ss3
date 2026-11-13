@@ -1,0 +1,12 @@
+benchmarking fp32 (torch) ...
+   acc 86.33% | size 44.78 MB | lat 6.385 ms | thr 818.8 img/s
+benchmarking unstructured (torch) ...
+   acc 86.97% | size 44.78 MB | lat 7.358 ms | thr 894.5 img/s
+benchmarking structured (torch) ...
+   acc 86.82% | size 23.87 MB | lat 4.198 ms | thr 1453.6 img/s
+
+Wrote q2_benchmark.csv and q2_predictions.csv in /home/claude/sub/results
+       model backend  test_accuracy_pct  size_mb  size_gzip_mb  latency_bs1_mean_ms  latency_bs1_p50_ms  latency_bs1_p95_ms  throughput_bs256_img_per_s  params_total  params_nonzero  sparsity_pct  macs_dense_M  macs_nonzero_M  acc_delta_vs_first_pts  size_reduction_x  gzip_size_reduction_x  latency_speedup_x  throughput_speedup_x  agreement_with_first_pct
+        fp32   torch              86.33    44.78         41.30                6.385               6.174               7.978                       818.8      11173962        11173962          0.00        138.86          138.86                    0.00              1.00                   1.00               1.00                  1.00                    100.00
+unstructured   torch              86.97    44.78          9.95                7.358               6.592              10.925                       894.5      11173962         1684263         84.93        138.86           64.62                    0.64              1.00                   4.15               0.87                  1.09                     95.10
+  structured   torch              86.82    23.87         21.99                4.198               3.750               5.988                      1453.6       5949450         5949450          0.00         65.64           65.64                    0.49              1.88                   1.88               1.52                  1.78                     92.55

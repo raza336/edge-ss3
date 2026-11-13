@@ -1,0 +1,25 @@
+=== QAT | backend=fbgemm | {'epochs': 2.0, 'batch_size': 128, 'lr': 0.01, 'wd': 0.0001, 'freeze_bn_frac': 0.6, 'freeze_obs_frac': 0.8, 'fp32': '/home/claude/sub/checkpoints/fp32_resnet18.pth', 'out': '/home/claude/sub/checkpoints/qat_int8_resnet18.pt', 'data_dir': '/home/claude/sub/data', 'seed': 42, 'no_onnx': False}
+FP32 starting point: 86.33%
+fake-quant modules inserted: 51
+step   100/780 loss 0.3593 lr 0.00960 | 1.8 min
+step   200/780 loss 0.3593 lr 0.00848 | 3.4 min
+step   300/780 loss 0.3618 lr 0.00681 | 5.0 min
+step   400/780 loss 0.3226 lr 0.00485 | 6.6 min
+step 469: BN statistics frozen
+step   500/780 loss 0.3174 lr 0.00293 | 8.3 min
+step   600/780 loss 0.3295 lr 0.00134 | 10.0 min
+step 625: observers frozen (quantization ranges fixed)
+step   700/780 loss 0.3015 lr 0.00035 | 11.7 min
+step   780/780 loss 0.2994 lr 0.00010 | 13.0 min
+QAT fake-quant model test accuracy: 87.18%
+QAT INT8 test accuracy: 87.30%  (vs FP32 86.33%, drop -0.97)
+/usr/local/lib/python3.13/site-packages/torch/jit/_trace.py:1006: FutureWarning: `torch.jit.trace` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.13/site-packages/torch/jit/_trace.py:1145: FutureWarning: `torch.jit.trace_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.13/site-packages/torch/jit/_serialization.py:89: FutureWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.13/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+Saved deployable INT8 model -> /home/claude/sub/checkpoints/qat_int8_resnet18.pt (11.4 MB); reloaded acc 87.30%
+[onnx] qat           -> /home/claude/sub/onnx_models/qat_int8_qdq_resnet18.onnx (44.7 MB) | QuantizeLinear x51, DequantizeLinear x51 | max|torch-ort| = 8.93e-02

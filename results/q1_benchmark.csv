@@ -1,0 +1,4 @@
+model,backend,test_accuracy_pct,model_file,size_mb,size_gzip_mb,latency_bs1_mean_ms,latency_bs1_p50_ms,latency_bs1_p95_ms,throughput_bs256_img_per_s,threads_throughput,params_total,params_nonzero,sparsity_pct,macs_dense_M,macs_nonzero_M,acc_delta_vs_first_pts,size_reduction_x,gzip_size_reduction_x,latency_speedup_x,throughput_speedup_x,agreement_with_first_pct
+fp32,torch,86.33,fp32_resnet18.pth,44.78,41.3,6.374,6.044,9.67,861.5,2,11173962.0,11173962.0,0.0,138.86,138.86,0.0,1.0,1.0,1.0,1.0,100.0
+ptq,torch,86.3,ptq_int8_resnet18.pt,11.43,10.43,1.158,1.116,1.528,2695.4,2,,,,,,-0.03,3.92,3.96,5.5,3.13,98.99
+qat,torch,87.3,qat_int8_resnet18.pt,11.43,10.44,1.294,1.204,1.734,2735.1,2,,,,,,0.97,3.92,3.96,4.93,3.17,95.64

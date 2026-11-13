@@ -1,0 +1,34 @@
+=== Unstructured pruning | {'sparsity': 0.85, 'iterations': 5, 'ft_epochs': 0.4, 'final_ft_epochs': 1.0, 'lr': 0.01, 'fp32': '/home/claude/sub/checkpoints/fp32_resnet18.pth', 'out': '/home/claude/sub/checkpoints/pruned_unstructured_resnet18.pth', 'data_dir': '/home/claude/sub/data', 'seed': 42}
+Baseline FP32 accuracy: 86.33%
+sparsity schedule: [0.415, 0.666, 0.796, 0.843, 0.85]
+[iter 1/5] target 0.415 actual 0.415 | acc right after pruning 86.37%
+  [iter1] step  100/156 loss 0.3424 | 1.3 min
+  [iter1] step  156/156 loss 0.3334 | 2.0 min
+  [iter1] done -> test acc 86.41%
+[iter 2/5] target 0.666 actual 0.666 | acc right after pruning 86.47%
+  [iter2] step  100/156 loss 0.3392 | 1.2 min
+  [iter2] step  156/156 loss 0.3420 | 1.9 min
+  [iter2] done -> test acc 86.44%
+[iter 3/5] target 0.796 actual 0.796 | acc right after pruning 85.92%
+  [iter3] step  100/156 loss 0.3322 | 1.3 min
+  [iter3] step  156/156 loss 0.3264 | 2.0 min
+  [iter3] done -> test acc 86.49%
+[iter 4/5] target 0.843 actual 0.843 | acc right after pruning 85.99%
+  [iter4] step  100/156 loss 0.3371 | 1.2 min
+  [iter4] step  156/156 loss 0.3294 | 1.9 min
+  [iter4] done -> test acc 86.70%
+[iter 5/5] target 0.850 actual 0.850 | acc right after pruning 86.18%
+  [iter5] step  100/156 loss 0.3272 | 1.3 min
+  [iter5] step  156/156 loss 0.3223 | 2.0 min
+  [iter5] done -> test acc 86.80%
+Final fine-tuning with the final mask ...
+  [final] step  100/390 loss 0.3305 | 1.3 min
+  [final] step  200/390 loss 0.3283 | 2.5 min
+  [final] step  300/390 loss 0.3207 | 3.7 min
+  [final] step  390/390 loss 0.3067 | 4.8 min
+  [final] done -> test acc 86.97%
+Made permanent: sparsity 0.8500 -> 0.8500; acc 86.97% -> 86.97%
+Parameters: total 11,173,962, non-zero 1,684,263 (15.1% dense)
+Saved dense checkpoint  -> /home/claude/sub/checkpoints/pruned_unstructured_resnet18.pth (44.8 MB, gzip 10.0 MB)
+Saved compact checkpoint-> /home/claude/sub/checkpoints/pruned_unstructured_resnet18_sparse_compact.pth (8.2 MB); reload acc 86.97%
+per-layer sparsity (%): {'conv1': 5.38, 'layer1.0.conv1': 22.79, 'layer1.0.conv2': 21.41, 'layer1.1.conv1': 23.34, 'layer1.1.conv2': 24.69, 'layer2.0.conv1': 29.67, 'layer2.0.conv2': 35.74, 'layer2.0.shortcut.0': 13.71, 'layer2.1.conv1': 36.7, 'layer2.1.conv2': 40.98, 'layer3.0.conv1': 47.5, 'layer3.0.conv2': 62.22, 'layer3.0.shortcut.0': 19.96, 'layer3.1.conv1': 69.79, 'layer3.1.conv2': 73.08, 'layer4.0.conv1': 81.13, 'layer4.0.conv2': 94.9, 'layer4.0.shortcut.0': 29.22, 'layer4.1.conv1': 99.55, 'layer4.1.conv2': 98.56, 'fc': 11.43}

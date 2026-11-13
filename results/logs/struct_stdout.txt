@@ -1,0 +1,19 @@
+=== Structured channel pruning | {'ratio': 0.5, 'min_keep': 0.25, 'ft_epochs': 3.0, 'lr': 0.02, 'fp32': '/home/claude/sub/checkpoints/fp32_resnet18.pth', 'out': '/home/claude/sub/checkpoints/pruned_structured_resnet18.pth', 'data_dir': '/home/claude/sub/data', 'seed': 42}
+Baseline: acc 86.33% | params 11,173,962 | MACs 138.9 M
+hidden channels per block (orig -> kept): ['64->22', '64->27', '128->63', '128->57', '256->125', '256->122', '512->235', '512->309']
+Reconstruction check: max |logit difference| vs. masked original = 7.15e-07
+After pruning (no fine-tune): acc 23.39% | params 5,949,450 (53.2%) | MACs 65.6 M (47.3%)
+  [structured] step  100/1170 loss 0.5848 | 0.7 min
+  [structured] step  200/1170 loss 0.5277 | 1.4 min
+  [structured] step  300/1170 loss 0.4888 | 2.1 min
+  [structured] step  400/1170 loss 0.4863 | 2.7 min
+  [structured] step  500/1170 loss 0.4403 | 3.4 min
+  [structured] step  600/1170 loss 0.4269 | 4.1 min
+  [structured] step  700/1170 loss 0.4091 | 4.7 min
+  [structured] step  800/1170 loss 0.3848 | 5.3 min
+  [structured] step  900/1170 loss 0.3502 | 6.0 min
+  [structured] step 1000/1170 loss 0.3333 | 6.6 min
+  [structured] step 1100/1170 loss 0.3433 | 7.3 min
+  [structured] step 1170/1170 loss 0.3370 | 7.8 min
+  [structured] done -> test acc 86.82%
+Saved reconstructed model -> /home/claude/sub/checkpoints/pruned_structured_resnet18.pth (23.9 MB); final acc 86.82%
